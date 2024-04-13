@@ -11,3 +11,12 @@ class Layers(BaseModel):
     user_id: str
     layers: List[Layer]
     activation_function: Optional[str] = None
+
+
+class Train(BaseModel):
+    batch_size: int
+    learning_rate: float
+    optimizer: str
+    epochs: int
+    user_id: int
+    model_name: int
