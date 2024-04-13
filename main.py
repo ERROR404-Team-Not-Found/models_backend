@@ -1,7 +1,11 @@
 import uvicorn
-from fastapi import fastapi
+from fastapi import FastAPI
 
 app = FastAPI()
+
+@app.post("/model/create")
+async def model_create():
+    pass
 
 
 if __name__ == '__main__':
