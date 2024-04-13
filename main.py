@@ -226,7 +226,7 @@ async def models(user_id: str):
 async def model_train(train: Train):
     latest_version = minio_client.get_last_model_version(train.user_id, train.model_name)
     cmd = [
-        "nohup", "python3", os.getenv("TRAIN_PATH"),
+        "nohup", "python3", "./train.py",
         "-u", str(train.user_id),
         "-m", str(train.model_name),
         "-l", str(train.learning_rate),
@@ -243,9 +243,19 @@ async def model_train(train: Train):
 
 @app.get("/train/status")
 async def train_status():
-    log_entries = read_log_file("./model.log")
-    for entry in log_entries:
-        print(entry)
+    log_entries = read_log_file(os.getenv("TRAIN_PATH") + "/" + "model.log")
+    if log_entries[-1]["message"].contains("error"):
+        return JSONResponse("Model did not finished training!", status_code=500)
+    elif log_entries[-1]["message"].contains("finished"):
+        for entry in log_entries:
+            if entry["message"].contains("hash"):
+                hash = entry["message"].split(":")[-1].strip()
+
+                return JSONResponse({
+                    "message": "Training finished!",
+                    "hash": hash
+                }, status_code=200)
+            
 
 
 @app.get("/model/versions")
