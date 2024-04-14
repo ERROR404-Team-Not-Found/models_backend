@@ -32,3 +32,5 @@ INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
 INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
 INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
 INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
