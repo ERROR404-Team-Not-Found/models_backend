@@ -2,35 +2,63 @@
 
 You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
   warnings.warn(
-INFO:     Started server process [492578]
+INFO:     Started server process [607835]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
-INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET / HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
+INFO:     92.180.66.106:0 - "POST /model/dataset?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=hackathonmodel& HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/fastapi/applications.py", line 292, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/middleware/cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/middleware/cors.py", line 146, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/fastapi/routing.py", line 273, in app
+    raw_response = await run_endpoint_function(
+  File "/home/ubuntu-machine/.local/lib/python3.10/site-packages/fastapi/routing.py", line 190, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/ubuntu-machine/models_backend/main.py", line 142, in model_dataset
+    df = pd.read_csv(csv_path)
+UnboundLocalError: local variable 'csv_path' referenced before assignment
+INFO:     92.180.66.105:0 - "GET /models?user_id=aad31f76-5433-402b-9643-cdd833bea7e9 HTTP/1.1" 200 OK
+INFO:     92.180.66.105:0 - "GET /models?user_id=aad31f76-5433-402b-9643-cdd833bea7e9 HTTP/1.1" 200 OK
 INFO:     92.180.66.105:0 - "GET /model/versions?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector HTTP/1.1" 200 OK
 INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
-INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.105:0 - "GET /model/versions?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector HTTP/1.1" 200 OK
-INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
-INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.105:0 - "OPTIONS /model/train HTTP/1.1" 200 OK
+Version:  4
+INFO:     92.180.66.105:0 - "POST /model/train HTTP/1.1" 200 OK
+2024-04-14 11:00:43.849726: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-04-14 11:00:43.849789: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-04-14 11:00:43.850807: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-04-14 11:00:43.855568: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-04-14 11:00:44.503868: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/home/ubuntu-machine/.local/lib/python3.10/site-packages/transformers/models/vit/feature_extraction_vit.py:28: FutureWarning: The class ViTFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use ViTImageProcessor instead.
+  warnings.warn(
+INFO:     92.180.66.105:0 - "GET /train/status?user_id=aad31f76-5433-402b-9643-cdd833bea7e9 HTTP/1.1" 400 Bad Request

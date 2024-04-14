@@ -110,7 +110,7 @@ async def model_dataset(user_id: str, model_name: str, file: UploadFile, label_c
     if not result:
         return JSONResponse("Could not create user bucket!", status_code=500)
 
-    if file.content_type == "application/zip":
+    if file.filename.split(".")[-1] == "zip":
         comment = f'# {{"dataset_path": "{user_id}/{model_name}/dataset.csv", "dataset_type": "images", "label_column": "label_value"}}\n'
         with open("./datasets.py", 'r') as f:
             content = f.read()
@@ -168,7 +168,7 @@ async def model_dataset(user_id: str, model_name: str, file: UploadFile, label_c
 
         return JSONResponse("Uploaded dataset successfully!", status_code=201)
 
-    elif file.content_type == 'text/csv':
+    elif file.filename.split(".")[-1] == "csv":
         buffer = await file.read()
 
         result = minio_client.upload_file(user_id, model_name, "dataset.csv", io.BytesIO(await file.read()))

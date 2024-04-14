@@ -8,11 +8,13 @@ layers = [{
         "inputs": [
             {
                 "name": "in_features",
-                "description": "Number of input features. Specifies the dimensionality of the input data."
+                "description": "Number of input features. Specifies the dimensionality of the input data.",
+                "value": 0
             },
             {
                 "name": "out_features",
-                "description": "Number of output features. Determines the dimensionality of the output data."
+                "description": "Number of output features. Determines the dimensionality of the output data.",
+                "value": 0
             }
         ]
     }, {
@@ -21,15 +23,18 @@ layers = [{
         "inputs": [
             {
                 "name": "in_channels",
-                "description": "Number of channels in the input image."
+                "description": "Number of channels in the input image.",
+                "value": 0
             },
             {
                 "name": "out_channels",
-                "description": "Number of channels produced by the convolution."
+                "description": "Number of channels produced by the convolution.",
+                "value": 0
             },
             {
                 "name": "kernel_size",
-                "description": "Size of the convolving kernel."
+                "description": "Size of the convolving kernel.",
+                "value": 0
             }
         ]
     }, {
@@ -38,15 +43,18 @@ layers = [{
         "inputs": [
             {
                 "name": "in_channels",
-                "description": "Number of channels in the input image."
+                "description": "Number of channels in the input image.",
+                "value": 0
             },
             {
                 "name": "out_channels",
-                "description": "Number of channels produced by the convolution."
+                "description": "Number of channels produced by the convolution.",
+                "value": 0
             },
             {
                 "name": "kernel_size",
-                "description": "Size of the convolving kernel."
+                "description": "Size of the convolving kernel.",
+                "value": 0
             }
         ]
     }, {
@@ -55,15 +63,18 @@ layers = [{
         "inputs": [
             {
                 "name": "in_channels",
-                "description": "Number of channels in the input volume."
+                "description": "Number of channels in the input volume.",
+                "value": 0
             },
             {
                 "name": "out_channels",
-                "description": "Number of channels produced by the convolution."
+                "description": "Number of channels produced by the convolution.",
+                "value": 0
             },
             {
                 "name": "kernel_size",
-                "description": "Size of the convolving kernel."
+                "description": "Size of the convolving kernel.",
+                "value": 0
             }
         ]
     }, {
@@ -72,11 +83,13 @@ layers = [{
         "inputs": [
             {
                 "name": "input_size",
-                "description": "The number of expected features in the input."
+                "description": "The number of expected features in the input.",
+                "value": 0
             },
             {
                 "name": "hidden_size",
-                "description": "The number of features in the hidden state."
+                "description": "The number of features in the hidden state.",
+                "value": 0
             }
         ]
     }, {
@@ -85,11 +98,13 @@ layers = [{
         "inputs": [
             {
                 "name": "input_size",
-                "description": "The number of expected features in the input."
+                "description": "The number of expected features in the input.",
+                "value": 0
             },
             {
                 "name": "hidden_size",
-                "description": "The number of features in the hidden state."
+                "description": "The number of features in the hidden state.",
+                "value": 0
             }
         ]
     }, {
@@ -98,11 +113,13 @@ layers = [{
         "inputs": [
             {
                 "name": "input_size",
-                "description": "The number of expected features in the input."
+                "description": "The number of expected features in the input.",
+                "value": 0
             },
             {
                 "name": "hidden_size",
-                "description": "The number of features in the hidden state."
+                "description": "The number of features in the hidden state.",
+                "value": 0
             }
         ]
     }, {
@@ -111,7 +128,8 @@ layers = [{
         "inputs": [
             {
                 "name": "p",
-                "description": "Probability of an element to be zeroed."
+                "description": "Probability of an element to be zeroed.",
+                "value": 0
             }
         ]
     },
@@ -121,7 +139,8 @@ layers = [{
         "inputs": [
             {
                 "name": "p",
-                "description": "Probability of an element to be zeroed."
+                "description": "Probability of an element to be zeroed.",
+                "value": 0
             }
         ]
     }, {
@@ -130,7 +149,8 @@ layers = [{
         "inputs": [
             {
                 "name": "p",
-                "description": "Probability of an element to be zeroed."
+                "description": "Probability of an element to be zeroed.",
+                "value": 0
             }
         ]
     }, {
@@ -139,11 +159,13 @@ layers = [{
         "inputs": [
             {
                 "name": "num_embeddings",
-                "description": "Size of the dictionary of embeddings."
+                "description": "Size of the dictionary of embeddings.",
+                "value": 0
             },
             {
                 "name": "embedding_dim",
-                "description": "The size of each embedding vector."
+                "description": "The size of each embedding vector.",
+                "value": 0
             }
         ],
     }
