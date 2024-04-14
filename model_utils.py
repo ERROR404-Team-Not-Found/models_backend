@@ -151,13 +151,13 @@ layers = [{
 
 activation_functions = [
     {
-        "name": "ReLU",
+        "name": "relu",
         "description": "Applies the rectified linear unit function element-wise."
     }, {
-        "name": "Softmax",
+        "name": "softmax",
         "description": "Applies the Softmax function to an n-dimensional input Tensor rescaling them so that the elements of the n-dimensional output Tensor lie in the range [0,1] and sum to 1."
     }, {
-        "name": "Tanh",
+        "name": "tanh",
         "description": "Applies the Hyperbolic Tangent (Tanh) function element-wise."
     }
 ]
@@ -170,7 +170,7 @@ def get_layer(name: str, params: dict[str, Any]):
 
 
 def get_activation_function(name: str):
-    nn = importlib.import_module("torch.nn")
+    nn = importlib.import_module("torch.nn.functional")
     activation_function = getattr(nn, name)
     return repr(activation_function())
 
@@ -193,7 +193,7 @@ def read_log_file(file_path):
                 if parsed_line:
                     entries.append(parsed_line)
     except FileNotFoundError:
-        print(f"Log file not found at {file_path}")
+        return None
     except Exception as e:
-        print(f"Failed to read log file: {str(e)}")
+        return None
     return entries

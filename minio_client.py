@@ -54,8 +54,11 @@ class Client:
             
     def get_last_model_version(self, bucket_name: str, model_name: str) -> None | str:
         try:
-            response = self.client.list_objects(bucket_name, prefix=f"{model_name}/model_weights", recursive=True)
-            return [l.object_name for l in list(response)][-1].split("/")[-1].split(".")[0]
+            response = self.client.list_objects(bucket_name, prefix=f"{model_name}/model_weights/", recursive=True)
+            last_version = None
+            for obj in response:
+                last_version = obj.object_name.split("/")[-1].split(".")[0]
+            return last_version
         except S3Error:
             return None
     

@@ -39,7 +39,7 @@ class CustomDataset(Dataset):
         if self.dataset_type == "images":
             string_image = base64.b64decode(self.dataset.iloc[idx]["image"].split(",")[-1])
             image = Image.open(io.BytesIO(string_image))
-            return image, self.dataset.iloc[idx][self.label_column]
+            return self.transform(image), self.dataset.iloc[idx][self.label_column]
         else:
             return self.dataset.iloc[idx][[column for column in self.dataset.columns if column != self.label_column]], self.dataset.iloc[idx][self.label_column]
 

@@ -1,0 +1,34 @@
+/home/ubuntu-machine/.local/lib/python3.10/site-packages/pydantic/_internal/_fields.py:126: UserWarning: Field "model_name" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+INFO:     Started server process [492578]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET / HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.105:0 - "GET /model/versions?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector HTTP/1.1" 200 OK
+INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
+INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.105:0 - "GET /model/versions?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector HTTP/1.1" 200 OK
+INFO:     92.180.66.105:0 - "GET /model/weight?user_id=aad31f76-5433-402b-9643-cdd833bea7e9&model_name=detector&version=3&hash=4ebe1493ddafaeb844583dba9662f11df4f41d3639d7f9acf8c285e8d2c50311 HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/layers HTTP/1.1" 200 OK
+INFO:     92.180.66.106:0 - "GET /model/activations HTTP/1.1" 200 OK

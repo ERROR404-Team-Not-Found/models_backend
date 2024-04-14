@@ -10,7 +10,9 @@ class Layers(BaseModel):
     name: str
     user_id: str
     layers: List[Layer]
-    activation_function: Optional[str] = None
+    activation_function: str
+    num_classes: int
+
 
 
 class Train(BaseModel):
@@ -18,5 +20,5 @@ class Train(BaseModel):
     learning_rate: float
     optimizer: str
     epochs: int
-    user_id: int
-    model_name: int
+    user_id: str
+    model_name: str
